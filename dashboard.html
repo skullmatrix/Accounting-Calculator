@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Accounting Form</title>
+  <title>Dashboard</title>
   <style>
     body {
       font-family: Arial, sans-serif;
@@ -59,4 +59,44 @@
     <label for="transactionDate">Date:</label>
     <input type="date" id="transactionDate">
 
-    <label for="transactionAmount">Amount:</
+    <label for="transactionAmount">Amount:</label>
+    <input type="text" id="transactionAmount" placeholder="₱ Enter amount">
+
+    <label for="transactionDescription">Transaction Description:</label>
+    <textarea id="transactionDescription" rows="4" placeholder="Enter transaction details"></textarea>
+
+    <button onclick="submitTransaction()">Submit</button>
+
+    <div id="journalOutput">
+      <!-- Accounting journal entries will be displayed here -->
+    </div>
+  </div>
+
+  <script>
+    function submitTransaction() {
+      const date = document.getElementById('transactionDate').value;
+      const amount = document.getElementById('transactionAmount').value;
+      const description = document.getElementById('transactionDescription').value;
+
+      // Format date as "Month, Date, Year"
+      const formattedDate = new Date(date).toLocaleDateString('en-US', {
+        month: 'long',
+        day: 'numeric',
+        year: 'numeric'
+      });
+
+      const entry = `<div class="journal-entry">
+                      <p><strong>Date:</strong> ${formattedDate}</p>
+                      <p><strong>Amount:</strong> ${amount}</p>
+                      <p><strong>Description:</strong> ${description}</p>
+                    </div>`;
+
+      const journalOutput = document.getElementById('journalOutput');
+      journalOutput.insertAdjacentHTML('beforeend', entry);
+
+      // You can perform further operations here like sending this data to a server/database.
+      // For this example, it's just displayed in the journalOutput.
+    }
+  </script>
+</body>
+</html>
