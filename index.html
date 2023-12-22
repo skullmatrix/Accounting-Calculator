@@ -11,7 +11,7 @@
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-image: url('https://thumbor.forbes.com/thumbor/fit-in/900x510/https://www.forbes.com/advisor/wp-content/uploads/2022/05/getty-2-2.jpg'); /* Replace with your image file */
+      background-image: url('background-image.jpg'); /* Replace with your image file */
       background-size: cover;
       background-position: center;
       font-family: Arial, sans-serif;
@@ -73,7 +73,7 @@
 </head>
 <body>
   <div class="container">
-    <form class="login-form" action="#" method="post">
+    <form class="login-form" action="dashboard.html" method="post">
       <h2>Welcome Back!</h2>
       <div class="input-group">
         <label for="username">Username:</label>
@@ -83,7 +83,11 @@
         <label for="password">Password:</label>
         <input type="password" id="password" name="password" required>
       </div>
-      <button type="submit">Login</button>
+      <!-- Modified button using anchor tag -->
+      <a href="dashboard.html">
+        <button type="submit">Login</button>
+      </a>
+      <!-- End of modified button -->
     </form>
   </div>
 </body>
