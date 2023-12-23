@@ -2,64 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>General Journal</title>
+  <title>Accounting Dashboard</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 20px;
+      margin: 0;
+      padding: 0;
       background-image: url('https://images2.alphacoders.com/131/1318485.png');
       background-size: cover;
-      background-repeat: no-repeat;
-      color: white;
+      background-position: center;
     }
-    h1 {
+
+    header {
+      background-color: #333;
+      color: #fff;
+      padding: 10px;
       text-align: center;
     }
-    .table-container {
-      max-width: 800px;
-      margin: 0 auto;
-      border: 2px solid black;
+
+    .container {
+      margin: 20px;
+    }
+
+    .dashboard-section {
+      background-color: rgba(255, 255, 255, 0.9);
       border-radius: 8px;
-      overflow-x: auto;
-      background-color: white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       padding: 20px;
+      margin-bottom: 20px;
     }
-    table {
-      width: 100%;
-      border-collapse: collapse;
-      border: 4px solid black;
-      color: black;
+
+    h2 {
+      color: #333;
     }
-    th, td {
-      border: 2px solid black;
+
+    .button-row {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 20px;
+    }
+
+    .dashboard-button {
+      flex: 1;
+      padding: 15px 20px;
+      margin: 0 10px;
+      border-radius: 6px;
+      background-color: #fff;
+      color: #333;
+      text-decoration: none;
+      text-align: center;
+      transition: background-color 0.3s ease;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .dashboard-button:hover {
+      background-color: #f0f0f0;
+    }
+
+    footer {
+      background-color: #333;
+      color: #fff;
+      text-align: center;
       padding: 10px;
-      text-align: left;
-    }
-    th {
-      background-color: #f2f2f2;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
     }
   </style>
 </head>
 <body>
-  <h1>General Journal</h1>
-  <div class="table-container">
-    <table>
-      <!-- Your table content here -->
-      <!-- Example rows -->
-      <tr>
-        <th>Date</th>
-        <th>Account Titles and Explanation</th>
-        <th>Debit</th>
-        <th>Credit</th>
-      </tr>
-      <tr>
-        <td>2018</td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <!-- Add more rows here -->
-    </table>
+  <header>
+    <h1>Accounting Dashboard</h1>
+  </header>
+
+  <div class="container">
+    <div class="dashboard-section">
+      <h2>Financial Tools</h2>
+      <div class="button-row">
+        <a href="general_journal.html" class="dashboard-button">General Journal</a>
+        <a href="balance_sheet.html" class="dashboard-button">Balance Sheet</a>
+        <a href="income_statement.html" class="dashboard-button">Income Statement</a>
+      </div>
+    </div>
+
+    <!-- Other sections can be added here for transactions, charts, etc. -->
+
   </div>
+
+  <footer>
+    &copy; 2023 Accounting Dashboard
+  </footer>
 </body>
 </html>
