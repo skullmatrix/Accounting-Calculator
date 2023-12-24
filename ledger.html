@@ -2,83 +2,43 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ledger (T Accounts)</title>
-  <style>
-    body {
-  font-family: Arial, sans-serif;
-  background-color: #f7f7f7;
-  margin: 0;
-  padding: 20px;
-}
-
-h1 {
-  text-align: center;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-table {
-  border-collapse: collapse;
-  width: 100%;
-  margin-bottom: 20px;
-  border: 2px solid #ccc;
-  background-color: #fff;
-}
-
-th, td {
-  border: 1px solid #ddd;
-  padding: 10px;
-  text-align: center;
-}
-
-th {
-  background-color: #f2f2f2;
-  font-weight: bold;
-}
-
-caption {
-  font-weight: bold;
-  font-size: 1.2em;
-  margin-bottom: 10px;
-}
-
-.highlight {
-  font-weight: bold;
-  color: #3498db;
-}
-
-.balance {
-  font-weight: bold;
-}
-
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>Ledger(T Accounts)</title>
+  <title>General Journal</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background-color: #f7f7f7;
-      margin: 0;
-      padding: 20px;
+      margin: 20px;
+      background-image: url('https://images2.alphacoders.com/131/1318485.png');
+      background-size: cover;
+      background-repeat: no-repeat;
+      color: white;
     }
     h1 {
       text-align: center;
-      font-size: 24px;
+      font-size: 36px;
+      font-family: 'Times New Roman', Times, serif;
       margin-bottom: 20px;
+    }
+    .table-container {
+      max-width: 800px;
+      margin: 0 auto;
+      border: 2px solid black;
+      border-radius: 8px;
+      overflow-x: auto;
+      background-color: white;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
     table {
-      border-collapse: collapse;
       width: 100%;
+      border-collapse: collapse;
+      border: 4px solid black;
+      color: black;
       margin-bottom: 20px;
-      border: 2px solid #ccc;
-      background-color: #fff;
     }
     th, td {
-      border: 1px solid #ddd;
-      padding: 10px;
-      text-align: center;
+      border: 2px solid black;
+      padding: 12px;
+      text-align: center; /* Center-aligning text */
     }
     th {
       background-color: #f2f2f2;
@@ -88,19 +48,39 @@ caption {
       font-weight: bold;
       font-size: 1.2em;
       margin-bottom: 10px;
+      text-align: center;
+      background-color: #333;
+      color: white;
+      padding: 8px;
     }
-    .highlight {
-      font-weight: bold;
-      color: #3498db;
+    .back-button {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      z-index: 1;
+      padding-left: 10px;
     }
-    .balance {
-      font-weight: bold;
+    .back-button button {
+      padding: 15px 30px;
+      background-color: #333;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 20px;
+    }
+    .back-button button:hover {
+      background-color: #555;
     }
   </style>
 </head>
 <body>
-
-<h1>Ledger(T Accounts)</h1>
+  <div class="back-button">
+    <button onclick="goBack()">Back</button>
+  </div>
+  <h1>Ledger (T Accounts)</h1>
+  <div class="table-container">
 
 <table>
   <caption>Cash</caption>
@@ -325,7 +305,186 @@ caption {
       </tr>
     </tbody>
   </table>
+
+  <table>
+    <caption>DETOYA, CAPITAL</caption>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Explanation</th>
+        <th>Debit</th>
+        <th>Date</th>
+        <th>Explanation</th>
+        <th>Credit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Dec. 1</td>
+        <td></td>
+        <td>₱150,000</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Balance</td>
+        <td>₱150,000</td>
+      </tr>
+    </tbody>
+  </table>
   
+  <table>
+    <caption>DETOYA DRAWING</caption>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Explanation</th>
+        <th>Debit</th>
+        <th>Date</th>
+        <th>Explanation</th>
+        <th>Credit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dec. 31</td>
+        <td></td>
+        <td>₱12,000</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Balance</td>
+        <td>₱12,000</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <caption>CONSULTING REVENUES</caption>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Explanation</th>
+        <th>Debit</th>
+        <th>Date</th>
+        <th>Explanation</th>
+        <th>Credit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Dec. 20</td>
+        <td></td>
+        <td>₱20,000</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>30</td>
+        <td></td>
+        <td>₱48,000</td>
+      </tr>
+      <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>Balance</td>
+        <td>₱68,000</td>
+    </tbody>
+  </table>
+
+  <table>
+    <caption>SALARIES EXPENSE</caption>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Explanation</th>
+        <th>Debit</th>
+        <th>Date</th>
+        <th>Explanation</th>
+        <th>Credit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dec. 14</td>
+        <td></td>
+        <td>₱6,000</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>28</td>
+        <td></td>
+        <td>₱6,000</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Balance</td>
+        <td>₱12,000</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tbody>
+  </table>
+
+  <table>
+    <caption>RENT EXPENSE</caption>
+    <thead>
+      <tr>
+        <th>Date</th>
+        <th>Explanation</th>
+        <th>Debit</th>
+        <th>Date</th>
+        <th>Explanation</th>
+        <th>Credit</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Dec. 2</td>
+        <td></td>
+        <td>₱8,000</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>Balance</td>
+        <td>₱8,000</td>
+        <td></td>
+        <td></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <script>
+    function goBack() {
+      window.history.back();
+    }
+  </script>
 
 </body>
 </html>
